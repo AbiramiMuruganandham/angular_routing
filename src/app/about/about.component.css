@@ -1,0 +1,9 @@
+.container{
+    padding-top: 100px;
+}
+p,img,video{
+    padding: 20px;
+}
+p{
+    font-family: cursive;
+}

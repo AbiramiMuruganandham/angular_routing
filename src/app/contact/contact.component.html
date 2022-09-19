@@ -1,0 +1,45 @@
+<h3>USER FORM</h3>
+<div class="center">
+    <form novalidate #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+
+        <div class=" form-group">
+           
+            <input type="text" class="form-control" name="firstName" placeholder="Enter First Name" ngModel #firstNameRef="ngModel" required
+                [class.ctrl-error]="firstNameRef.touched &&
+                              firstNameRef?.errors?.required" minlength="3">
+            <div *ngIf="firstNameRef.touched &&
+                           firstNameRef?.errors?.required" class="error-message" style="color: red;">
+               * The first name is required.
+            </div>
+
+           
+            <input type="text" class="form-control" name="lastName" placeholder="Enter Last Name" ngModel #lastNameRef="ngModel" required 
+            [class.ctrl-error]="firstNameRef.touched &&
+            lastNameRef?.errors?.required" minlength="3">
+            <div *ngIf="lastNameRef.touched &&
+            lastNameRef?.errors?.required" class="error-message" style="color: red;">
+                * The Last name is required.
+                </div>
+
+            
+            <input type="email" class="form-control" name="email" placeholder="Enter Email" ngModel #emailRef="ngModel" required 
+            [class.ctrl-error]="firstNameRef.touched &&
+            emailRef?.errors?.required" minlength="3">
+            <div *ngIf="emailRef.touched &&
+            emailRef?.errors?.required" class="error-message" style="color: red;">
+                * The Email is required.
+                </div>
+
+            
+            <input type="password" class="form-control" name="password"  placeholder="Enter Password" ngModel #passwordRef="ngModel" required
+            [class.ctrl-error]="firstNameRef.touched &&
+            passwordRef?.errors?.required" minlength="3">
+            <div *ngIf="passwordRef.touched &&
+            passwordRef?.errors?.required" class="error-message" style="color: red;">
+                * The Password is required.
+                </div>
+        </div> <br>
+
+        <button type="submit" class="btn btn-success" [disabled]="formRef.invalid">Submit</button>
+    </form>
+</div>

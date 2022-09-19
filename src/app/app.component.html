@@ -1,0 +1,22 @@
+<div class="header ">
+  <nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a routerLink="/services" routerLinkActive="active">Services</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>   
+        <div ngbDropdown class="d-inline-block">
+          <a  ngbDropdownToggle style="color: brown;">Recruitment</a>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <a routerLink="/recruitment" ngbDropdownItem routerLinkActive="">Employee Information</a> 
+          </div>
+        </div>
+    
+  </nav>
+  
+</div>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+<div class="footer">
+  <p>copyrights@ <a href="https://skillsafari.in/">skillsafari</a></p>
+</div>

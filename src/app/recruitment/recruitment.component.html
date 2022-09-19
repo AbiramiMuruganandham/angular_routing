@@ -1,0 +1,124 @@
+<h2>Employee Form</h2>
+<div class="center">
+    <div class="box-body">
+        <form novalidate #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    
+                    <input type="text" class="form-control" name="firstName" placeholder="Enter First Name" ngModel #firstNameRef="ngModel" required
+                        [class.ctrl-error]="firstNameRef.touched &&
+                    firstNameRef?.errors?.required" minlength="3">
+                    <div *ngIf="firstNameRef.touched &&
+                firstNameRef?.errors?.required" class="error-message" style="color: red;">
+                       * The first name is required.
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+              
+                    <input type="text" class="form-control" name="lastName" placeholder="Enter lastName Name" ngModel #lastNameRef="ngModel" required
+                    [class.ctrl-error]="lastNameRef.touched &&
+                    lastNameRef?.errors?.required" minlength="3">
+                    <div *ngIf="lastNameRef.touched &&
+                    lastNameRef?.errors?.required" class="error-message" style="color: red;">
+                           * The Last name is required.
+                        </div>
+                </div>
+                
+            </div>
+            
+            <div class="form-group">
+                
+                <input type="email" class="form-control" name="email" placeholder="Enter Email" ngModel #emailRef="ngModel" required
+                [class.ctrl-error]="emailRef.touched &&
+                emailRef?.errors?.required" minlength="3">
+                <div *ngIf="emailRef.touched &&
+                emailRef?.errors?.required" class="error-message" style="color: red;">
+                       * The LEmail is required.
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    
+                    <input type="Mark" class="form-control" name="Mark"  placeholder="Enter 10th Mark" ngModel #markRef="ngModel" required 
+                    [class.ctrl-error]="markRef.touched &&
+                    markRef?.errors?.required">
+                    <div *ngIf="markRef.touched &&
+                    markRef?.errors?.required" class="error-message" style="color: red;">
+                           * The 10th Mark is required.
+                        </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                 
+                    <input type="Mark1" class="form-control" name="Mark1"  placeholder="Enter 12th Mark" ngModel 
+                        #mark1Ref="ngModel" required   [class.ctrl-error]="mark1Ref.touched &&
+                        mark1Ref?.errors?.required" >
+                        <div *ngIf="mark1Ref.touched &&
+                        mark1Ref?.errors?.required" class="error-message" style="color: red;">
+                           * The 12th Mark is required.
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    
+                    <input type="text" class="form-control" name="Number" placeholder="Enter Phone Number" ngModel #numRef="ngModel" required
+                    [class.ctrl-error]="numRef.touched &&
+                    numRef?.errors?.required" >
+                    <div *ngIf="numRef.touched &&
+                    numRef?.errors?.required" class="error-message" style="color: red;">
+                       * The Phone Number is required.
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                   
+                    <input type="text" class="form-control" name="Address" placeholder="Enter Address" ngModel #addRef="ngModel" required 
+                    [class.ctrl-error]="addRef.touched &&
+                    addRef?.errors?.required" >
+                    <div *ngIf="addRef.touched &&
+                    addRef?.errors?.required" class="error-message" style="color: red;">
+                       * Adress is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label>Desgination</label>
+                    <select class="form-control" name="Desgination" ngModel="" #countryRef="ngModel">
+                        <option value="ui">UI Developer</option>
+                        <option value="fs">Full Stack Developer</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label>Degree</label>
+                    <select class="form-control" name="Degree" ngModel="" #countryRef="ngModel">
+                        <option value="ui">BE/Btech</option>
+                        <option value="fs">Arts</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label>Resume</label>
+                    <input type="file" class="form-control" name="state" ngModel #stateRef="ngModel">
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label>Image</label>
+                    <input type="file" class="form-control" name="zip" ngModel #zipRef="ngModel">
+                </div>
+            </div>
+           
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label>Gender</label>
+                    <div>
+                        <input type="radio" name="male"/> Male <br>
+                        <input type="radio" name="female"/> Female <br>
+                        <input type="radio" name="other"/> Other
+                    </div>
+                </div>
+            </div>
+           
+            <button type="submit" class="btn btn-info" [disabled]="formRef.invalid">Submit</button>
+        </form>
+    </div>
+</div>

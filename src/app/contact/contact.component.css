@@ -1,0 +1,19 @@
+.center {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    font-family: cursive;
+  }
+  input{
+    margin: 20px;
+    text-align: center;
+  }
+  
+  h3{
+    font-family: emoji;
+    text-align: center;
+    padding-top: 25px;
+    font-size: large;
+    color: brown;
+}
